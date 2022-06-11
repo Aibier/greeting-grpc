@@ -1,0 +1,101 @@
+name: Unit Tests
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - "**/*.md"
+      - "**/udemy.yml"
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - "**/*.md"
+      - "**/udemy.yml"
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, macos-11, windows-2022]
+    steps:
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '^1.17'
+
+      - id: go-cache-paths
+        run: |
+          echo "::set-output name=go-build::$(go env GOCACHE)"
+          echo "::set-output name=go-mod::$(go env GOMODCACHE)"
+          echo "::set-output name=go-path-bin::$(go env GOPATH)/bin"
+
+      - uses: actions/checkout@v2
+
+      - name: Go Build Cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.go-cache-paths.outputs.go-build }}
+          key: ${{ runner.os }}-go-build-${{ hashFiles('**/go.sum') }}
+
+      - name: Go Mod Cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.go-cache-paths.outputs.go-mod }}
+          key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+
+      - name: Go Bin Cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.go-cache-paths.outputs.go-path-bin }}
+          key: ${{ runner.os }}-go-path-bin-${{ hashFiles('**/go.sum') }}
+      
+      - name: Install make (if needed)
+        run: choco install make
+        if: runner.os == 'Windows'
+
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v1
+        with:
+          version: '3.x'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install gRPC Go plugins
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
+
+      - name: Test
+        run: make test
+
+  red-cross-platform-badge:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: ${{ failure() }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          sed -i 's/linux-brightgreen/linux-red/g' README.md
+          if [[ `git status --porcelain` ]]; then
+            git config --global user.name 'Clement Jean'
+            git config --global user.email 'Clement-Jean@users.noreply.github.com'
+            git add README.md
+            git commit -m "Cross-Platform build failed"
+            git push
+          fi
+
+  green-cross-platform-badge:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          sed -i 's/linux-red/linux-brightgreen/g' README.md
+          if [[ `git status --porcelain` ]]; then
+            git config --global user.name 'Clement Jean'
+            git config --global user.email 'Clement-Jean@users.noreply.github.com'
+            git add README.md
+            git commit -m "Cross-Platform build succeeded"
+            git push
+          fi
