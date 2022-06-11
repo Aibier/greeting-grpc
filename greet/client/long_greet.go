@@ -12,7 +12,7 @@ func doLongGreet(c pb.GreetServiceClient) {
 	log.Println("doLongGreet was invoked")
 
 	reqs := []*pb.GreetRequest{
-		{FirstName: "Clement"},
+		{FirstName: "Aibier"},
 		{FirstName: "Marie"},
 		{FirstName: "Test"},
 	}

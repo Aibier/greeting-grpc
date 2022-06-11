@@ -19,7 +19,7 @@ func doGreetEveryone(c pb.GreetServiceClient) {
 	}
 
 	requests := []*pb.GreetRequest{
-		{FirstName: "Clement"},
+		{FirstName: "Aibier"},
 		{FirstName: "Marie"},
 		{FirstName: "Test"},
 	}

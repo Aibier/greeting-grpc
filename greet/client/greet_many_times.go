@@ -12,7 +12,7 @@ func doGreetManyTimes(c pb.GreetServiceClient) {
 	log.Println("doGreetManyTimes was invoked")
 
 	req := &pb.GreetRequest{
-		FirstName: "Clement",
+		FirstName: "Aibier",
 	}
 
 	stream, err := c.GreetManyTimes(context.Background(), req)

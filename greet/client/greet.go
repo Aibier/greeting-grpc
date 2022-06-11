@@ -9,7 +9,7 @@ import (
 
 func doGreet(c pb.GreetServiceClient) {
 	log.Println("doGreet was invoked")
-	r, err := c.Greet(context.Background(), &pb.GreetRequest{FirstName: "Clement"})
+	r, err := c.Greet(context.Background(), &pb.GreetRequest{FirstName: "Aibier"})
 
 	if err != nil {
 		log.Fatalf("Could not greet: %v\n", err)

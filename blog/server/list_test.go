@@ -32,13 +32,13 @@ func TestList(t *testing.T) {
 		collection = mt.Coll
 		first := mtest.CreateCursorResponse(1, "foo.bar", mtest.FirstBatch, bson.D{
 			{Key: "_id", Value: primitive.NewObjectID()},
-			{Key: "author_id", Value: "Clement"},
+			{Key: "author_id", Value: "Aibier"},
 			{Key: "title", Value: "a title"},
 			{Key: "content", Value: "a content"},
 		})
 		second := mtest.CreateCursorResponse(1, "foo.bar", mtest.NextBatch, bson.D{
 			{Key: "_id", Value: primitive.NewObjectID()},
-			{Key: "author_id", Value: "not Clement"},
+			{Key: "author_id", Value: "not Aibier"},
 			{Key: "title", Value: "another title"},
 			{Key: "content", Value: "another content"},
 		})

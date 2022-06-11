@@ -23,7 +23,7 @@ func TestGreetManyTimes(t *testing.T) {
 	c := pb.NewGreetServiceClient(conn)
 
 	req := &pb.GreetRequest{
-		FirstName: "Clement",
+		FirstName: "Aibier",
 	}
 
 	res, err := c.GreetManyTimes(context.Background(), req)

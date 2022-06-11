@@ -32,7 +32,7 @@ func TestUpdate(t *testing.T) {
 		collection = mt.Coll
 		expectedBlog := &BlogItem{
 			ID:       primitive.NewObjectID(),
-			AuthorID: "not Clement",
+			AuthorID: "not Aibier",
 			Title:    "a new Title",
 			Content:  "a new content",
 		}
@@ -67,7 +67,7 @@ func TestUpdateNotFound(t *testing.T) {
 		collection = mt.Coll
 		expectedBlog := &BlogItem{
 			ID:       primitive.NewObjectID(),
-			AuthorID: "not Clement",
+			AuthorID: "not Aibier",
 			Title:    "a new Title",
 			Content:  "a new content",
 		}
@@ -114,7 +114,7 @@ func TestUpdateError(t *testing.T) {
 
 		blog := &pb.Blog{
 			Id:       primitive.NewObjectID().Hex(),
-			AuthorId: "not Clement",
+			AuthorId: "not Aibier",
 			Title:    "a new Title",
 			Content:  "a new content",
 		}

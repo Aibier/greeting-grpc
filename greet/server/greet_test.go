@@ -26,8 +26,8 @@ func TestGreet(t *testing.T) {
 		name     string
 	}{
 		{
-			expected: "Hello Clement",
-			name:     "Clement",
+			expected: "Hello Aibier",
+			name:     "Aibier",
 		},
 		{
 			expected: "Hello Marie",

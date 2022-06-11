@@ -32,7 +32,7 @@ func TestRead(t *testing.T) {
 		collection = mt.Coll
 		expectedBlog := BlogItem{
 			ID:       primitive.NewObjectID(),
-			AuthorID: "Clement",
+			AuthorID: "Aibier",
 			Title:    "A title",
 			Content:  "Content !",
 		}

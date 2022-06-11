@@ -11,7 +11,7 @@ func createBlog(c pb.BlogServiceClient) string {
 	log.Println("---createBlog was invoked---")
 
 	blog := &pb.Blog{
-		AuthorId: "Clement",
+		AuthorId: "Aibier",
 		Title:    "My First Blog",
 		Content:  "Content of the first blog",
 	}

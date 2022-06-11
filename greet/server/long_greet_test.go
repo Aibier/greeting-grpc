@@ -23,7 +23,7 @@ func TestLongGreet(t *testing.T) {
 
 	requests := []*pb.GreetRequest{
 		{
-			FirstName: "Clement",
+			FirstName: "Aibier",
 		},
 		{
 			FirstName: "Marie",
@@ -49,7 +49,7 @@ func TestLongGreet(t *testing.T) {
 		t.Errorf("Error while receiving response from LongGreet: %v", err)
 	}
 
-	expected := "Hello Clement!\nHello Marie!\nHello Test!\n"
+	expected := "Hello Aibier!\nHello Marie!\nHello Test!\n"
 
 	if res.Result != expected {
 		t.Errorf("Expected \"%s\" elements, got: \"%v\"", expected, res.Result)

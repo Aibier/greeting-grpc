@@ -30,7 +30,7 @@ func TestGreetEveryone(t *testing.T) {
 
 	requests := []*pb.GreetRequest{
 		{
-			FirstName: "Clement",
+			FirstName: "Aibier",
 		},
 		{
 			FirstName: "Marie",

@@ -33,7 +33,7 @@ func TestCreate(t *testing.T) {
 		mt.AddMockResponses(mtest.CreateSuccessResponse())
 
 		blog := &pb.Blog{
-			AuthorId: "Clement",
+			AuthorId: "Aibier",
 			Title:    "My First Blog",
 			Content:  "Content of the first blog",
 		}
@@ -65,7 +65,7 @@ func TestCreateError(t *testing.T) {
 		mt.AddMockResponses(bson.D{{Key: "error", Value: 0}})
 
 		blog := &pb.Blog{
-			AuthorId: "Clement",
+			AuthorId: "Aibier",
 			Title:    "My First Blog",
 			Content:  "Content of the first blog",
 		}

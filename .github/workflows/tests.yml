@@ -77,8 +77,8 @@ jobs:
       - run: |
           sed -i 's/linux-brightgreen/linux-red/g' README.md
           if [[ `git status --porcelain` ]]; then
-            git config --global user.name 'Clement Jean'
-            git config --global user.email 'Clement-Jean@users.noreply.github.com'
+            git config --global user.name 'Aibier'
+            git config --global user.email 'Aibier@users.noreply.github.com'
             git add README.md
             git commit -m "Cross-Platform build failed"
             git push
@@ -93,8 +93,8 @@ jobs:
       - run: |
           sed -i 's/linux-red/linux-brightgreen/g' README.md
           if [[ `git status --porcelain` ]]; then
-            git config --global user.name 'Clement Jean'
-            git config --global user.email 'Clement-Jean@users.noreply.github.com'
+            git config --global user.name 'Aibier'
+            git config --global user.email 'Aibier@users.noreply.github.com'
             git add README.md
             git commit -m "Cross-Platform build succeeded"
             git push

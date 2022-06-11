@@ -16,7 +16,7 @@ func doGreetWithDeadline(c pb.GreetServiceClient, timeout time.Duration) {
 	defer cancel()
 
 	req := &pb.GreetRequest{
-		FirstName: "Clement",
+		FirstName: "Aibier",
 	}
 	res, err := c.GreetWithDeadline(ctx, req)
 

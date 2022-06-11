@@ -30,7 +30,7 @@ func TestGreetWithDeadline(t *testing.T) {
 	c := pb.NewGreetServiceClient(conn)
 
 	req := &pb.GreetRequest{
-		FirstName: "Clement",
+		FirstName: "Aibier",
 	}
 	res, err := c.GreetWithDeadline(ctx, req)
 
@@ -38,7 +38,7 @@ func TestGreetWithDeadline(t *testing.T) {
 		t.Errorf("Expected no error, got: %v", err)
 	}
 
-	expected := "Hello Clement"
+	expected := "Hello Aibier"
 
 	if res.Result != expected {
 		t.Errorf("Expected %s, got: %s", expected, res.Result)
@@ -59,7 +59,7 @@ func TestGreetWithDeadlineExceeded(t *testing.T) {
 	c := pb.NewGreetServiceClient(conn)
 
 	req := &pb.GreetRequest{
-		FirstName: "Clement",
+		FirstName: "Aibier",
 	}
 	_, err = c.GreetWithDeadline(ctx, req)
 
