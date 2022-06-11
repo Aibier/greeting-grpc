@@ -1,3 +1,5 @@
+## Go
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -13,3 +15,25 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Go workspace file
+go.work
+
+## Protobuf
+*.pb.go
+
+## SSL
+*.crt
+*.key
+*.csr
+*.pem
+
+## Mac
+.DS_Store
+
+## Other
+bin
+.vscode
+.idea
+
+
