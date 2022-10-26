@@ -61,3 +61,6 @@ As I need to know a little bit more information about your environment to help y
 ```shell
 make about
 ```
+## Go env setup in the curren directory
+export PATH=$PATH:$HOME/go/bin, in order to add the GOPATH and
+export PATH=$PATH:/usr/local/go/bin, in order to add GOROOT
