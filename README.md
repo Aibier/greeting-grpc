@@ -1,15 +1,5 @@
 # gRPC Go
 
-[![Go Unit Tests](https://github.com/Aibier/greeting-grpc/actions/workflows/tests.yml/badge.svg)](https://github.com/Aibier/greeting-grpc/actions/workflows/tests.yml) [![Lint protobuf](https://github.com/Aibier/greeting-grpc/actions/workflows/lint.yml/badge.svg)](https://github.com/Aibier/greeting-grpc/actions/workflows/lint.yml) ![cross-platform](https://img.shields.io/badge/Platform-windows%20%7C%20macos%20%7C%20linux-brightgreen) ![Udemy](.github/badges/udemy.svg)
-
-## Notes
-
-### `Windows`
-
-- I recommend you use powershell (try to update: [see](https://github.com/PowerShell/PowerShell/releases)) for following this course, you might have unexepected behavior if you use Git bash or other (especially with OpenSSL)
-- I recommend you use [Chocolatey](https://chocolatey.org/) as package installer (see [Install](https://chocolatey.org/install))
-
-
 ### Build
 
 #### `Linux/MacOS`
